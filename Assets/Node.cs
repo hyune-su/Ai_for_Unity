@@ -7,7 +7,7 @@ public class Node : MonoBehaviour
     public bool isVisited = false;
     public int nodeindex;
     public int[] _Connected_node = new int[30];
-    public int[] _node_Weight = new int[30];
+    public double[] _node_Weight = new double[30];
     public int _count;
 
     public void setVisited(bool state)
@@ -27,7 +27,7 @@ public class Node : MonoBehaviour
         }
     }
 
-    public int nodeWeight(int a)
+    public double nodeWeight(int a)
     {
         return _node_Weight[a];
     }

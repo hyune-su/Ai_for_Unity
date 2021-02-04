@@ -14,7 +14,7 @@ public class PlayerMgr : MonoBehaviour
     public float speed = 1.0f;
     public float Mass = 15;
 
-    private Vector3 _velocity = Vector3.zero;
+    public Vector3 _velocity = Vector3.zero;
     private Vector3 _pickPos;
     private RaycastHit hit;
 
@@ -27,11 +27,11 @@ public class PlayerMgr : MonoBehaviour
     public int count = 1;
 
     private int temp;
-    private int[] d;
+    private double[] d;
     public int[] d_path;
 
-    private int current;
-    private int distance;
+    private int parent;
+    private double weight;
     private int t_count=0;
     private int t_count_2 = 0;
 
@@ -41,11 +41,15 @@ public class PlayerMgr : MonoBehaviour
 
     private int INF = 1000000000;
 
+    private int search_count = 0;
+
+    private bool isAstar=false;
+
     private void Start()
     {
         Node_my = new Node[30];
         target_Node = new Node[30];
-        d = new int[30];
+        d = new double[30];
         d_path = new int[30];
 
         Node_my = Graph.GetComponent<AiMgr>().Node;
@@ -110,6 +114,14 @@ public class PlayerMgr : MonoBehaviour
             transform.position = transform.position + _velocity;
             transform.forward = _velocity.normalized;
         }
+    }
+    public void SetAstar()
+    {
+        isAstar = true;
+    }
+    public void SetDijkstra()
+    {
+        isAstar = false;
     }
 
     private void FindNode()
@@ -189,6 +201,8 @@ public class PlayerMgr : MonoBehaviour
     {
         FindNode();
 
+        search_count = 0;
+
         for (int i = 1; i < Node_my.Length; i++)
         {
             d[i] = INF;
@@ -196,11 +210,11 @@ public class PlayerMgr : MonoBehaviour
 
         d[startNode] = 0;
 
-        List<Tuple<int, int>> pq = new List<Tuple<int, int>>();
+        List<Tuple<int, double>> pq = new List<Tuple<int, double>>();
 
         if (startNode != 0)
         {
-            pq.Add(new Tuple<int, int>(startNode, 0));
+            pq.Add(new Tuple<int, double>(startNode, 0));
         }
 
         while (pq.Count != 0)
@@ -210,30 +224,49 @@ public class PlayerMgr : MonoBehaviour
 
             foreach (var q in pq)
             {
-                current = q.Item1;
+                parent = q.Item1;
 
-                distance = q.Item2;
+                weight = q.Item2;
                 pq.RemoveAt(0);
                 break;
             }
 
-            if (d[current] < distance)
+            if (d[parent] < weight)
             {
                 continue;
             }
 
-            for (int i = 1; i <= Node_my[current]._count; i++)
+            for (int i = 1; i <= Node_my[parent]._count; i++)
             {
-                int next = Node_my[current]._Connected_node[i];
+                int next = Node_my[parent]._Connected_node[i];
 
-                int nextDistance = distance + Node_my[current]._node_Weight[i];
+                double Heu = Math.Sqrt(Math.Pow(Node_my[next].transform.position.x-Node_my[endNode].transform.position.x, 2) + Math.Pow(Node_my[next].transform.position.z - Node_my[endNode].transform.position.z, 2));
+
+                double nextDistance = 0;
+
+                if (isAstar)
+                {
+                    nextDistance = weight + Node_my[parent]._node_Weight[i] + Heu;
+                }
+                else
+                {
+                    nextDistance = weight + Node_my[parent]._node_Weight[i];
+                }
 
                 if (nextDistance < d[next])
                 {
-                    d_path[next] = current;
+                    search_count++;
+
+                    d_path[next] = parent;
+                    
                     d[next] = nextDistance;
 
-                    pq.Add(new Tuple<int, int>(next, nextDistance));
+                    pq.Add(new Tuple<int, double>(next, d[next]));
+
+                    if(Node_my[endNode].nodeindex == Node_my[parent]._Connected_node[i])
+                    {
+                        Debug.Log(search_count);
+                    }
                 }
             }
         }

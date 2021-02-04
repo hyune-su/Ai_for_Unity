@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -139,113 +140,122 @@ public class Graph : MonoBehaviour
                     }
                 }
 
-                nodeList[1].connectNodeIndex(1, 2, 1);
-                nodeList[1].connectNodeIndex(2, 8, 1);
+                nodeList[1].connectNodeIndex(1, 2, 10);
+                nodeList[1].connectNodeIndex(2, 8, 10);
 
-                nodeList[2].connectNodeIndex(1, 1, 1);
-                nodeList[2].connectNodeIndex(2, 3, 1);
-                nodeList[2].connectNodeIndex(3, 7, 1);
+                nodeList[2].connectNodeIndex(1, 1, 10);
+                nodeList[2].connectNodeIndex(2, 3, 10);
+                nodeList[2].connectNodeIndex(3, 7, 10);
 
-                nodeList[3].connectNodeIndex(1, 2, 1);
-                nodeList[3].connectNodeIndex(2, 4, 1);
-                nodeList[3].connectNodeIndex(3, 5, 1);
+                nodeList[3].connectNodeIndex(1, 2, 10);
+                nodeList[3].connectNodeIndex(2, 4, 10);
+                nodeList[3].connectNodeIndex(3, 5, 10);
 
-                nodeList[4].connectNodeIndex(1, 3, 1);
-                nodeList[4].connectNodeIndex(2, 19, 1);
+                nodeList[4].connectNodeIndex(1, 3, 10);
+                nodeList[4].connectNodeIndex(2, 19, 10);
 
-                nodeList[5].connectNodeIndex(1, 3, 1);
-                nodeList[5].connectNodeIndex(2, 6, 1);
+                nodeList[5].connectNodeIndex(1, 3, 10);
+                nodeList[5].connectNodeIndex(2, 6, 10);
 
-                nodeList[6].connectNodeIndex(1, 5, 1);
-                nodeList[6].connectNodeIndex(2, 7, 1);
-                nodeList[6].connectNodeIndex(3, 12, 1);
+                nodeList[6].connectNodeIndex(1, 5, 10);
+                nodeList[6].connectNodeIndex(2, 7, 10);
+                nodeList[6].connectNodeIndex(3, 12, 10);
 
-                nodeList[7].connectNodeIndex(1, 2, 1);
-                nodeList[7].connectNodeIndex(2, 6, 1);
-                nodeList[7].connectNodeIndex(3, 8, 1);
-                nodeList[7].connectNodeIndex(4, 10, 1);
+                nodeList[7].connectNodeIndex(1, 2, 10);
+                nodeList[7].connectNodeIndex(2, 6, 10);
+                nodeList[7].connectNodeIndex(3, 8, 10);
+                nodeList[7].connectNodeIndex(4, 10, 10);
 
-                nodeList[8].connectNodeIndex(1, 1, 1);
-                nodeList[8].connectNodeIndex(2, 7, 1);
-                nodeList[8].connectNodeIndex(3, 9, 1);
+                nodeList[8].connectNodeIndex(1, 1, 10);
+                nodeList[8].connectNodeIndex(2, 7, 10);
+                nodeList[8].connectNodeIndex(3, 9, 10);
 
-                nodeList[9].connectNodeIndex(1, 8, 1);
-                nodeList[9].connectNodeIndex(2, 10, 1);
-                nodeList[9].connectNodeIndex(3, 25, 1);
+                nodeList[9].connectNodeIndex(1, 8, 10);
+                nodeList[9].connectNodeIndex(2, 10, 10);
+                nodeList[9].connectNodeIndex(3, 25, 10);
 
-                nodeList[10].connectNodeIndex(1, 7, 1);
-                nodeList[10].connectNodeIndex(2, 9, 1);
-                nodeList[10].connectNodeIndex(3, 11, 1);
+                nodeList[10].connectNodeIndex(1, 7, 10);
+                nodeList[10].connectNodeIndex(2, 9, 10);
+                nodeList[10].connectNodeIndex(3, 11, 10);
 
-                nodeList[11].connectNodeIndex(1, 10, 1);
-                nodeList[11].connectNodeIndex(2, 12, 1);
-                nodeList[11].connectNodeIndex(3, 29, 1);
+                nodeList[11].connectNodeIndex(1, 10, 10);
+                nodeList[11].connectNodeIndex(2, 12, 10);
+                nodeList[11].connectNodeIndex(3, 29, 10);
 
-                nodeList[12].connectNodeIndex(1, 6, 1);
-                nodeList[12].connectNodeIndex(2, 11, 1);
-                nodeList[12].connectNodeIndex(3, 13, 1);
+                nodeList[12].connectNodeIndex(1, 6, 10);
+                nodeList[12].connectNodeIndex(2, 11, 10);
+                nodeList[12].connectNodeIndex(3, 13, 10);
 
-                nodeList[13].connectNodeIndex(1, 11, 1);
-                nodeList[13].connectNodeIndex(2, 14, 1);
+                nodeList[13].connectNodeIndex(1, 11, 10);
+                nodeList[13].connectNodeIndex(2, 14, 10);
 
-                nodeList[14].connectNodeIndex(1, 13, 1);
-                nodeList[14].connectNodeIndex(2, 15, 1);
-                nodeList[14].connectNodeIndex(3, 18, 1);
+                nodeList[14].connectNodeIndex(1, 13, 10);
+                nodeList[14].connectNodeIndex(2, 15, 10);
+                nodeList[14].connectNodeIndex(3, 18, 10);
 
-                nodeList[15].connectNodeIndex(1, 14, 1);
-                nodeList[15].connectNodeIndex(2, 16, 1);
-                nodeList[15].connectNodeIndex(3, 29, 1);
+                nodeList[15].connectNodeIndex(1, 14, 10);
+                nodeList[15].connectNodeIndex(2, 16, 10);
+                nodeList[15].connectNodeIndex(3, 29, 10);
 
-                nodeList[16].connectNodeIndex(1, 15, 1);
-                nodeList[16].connectNodeIndex(2, 17, 1);
+                nodeList[16].connectNodeIndex(1, 15, 10);
+                nodeList[16].connectNodeIndex(2, 17, 10);
 
-                nodeList[17].connectNodeIndex(1, 16, 1);
-                nodeList[17].connectNodeIndex(2, 18, 1);
-                nodeList[17].connectNodeIndex(3, 20, 1);
-                nodeList[17].connectNodeIndex(4, 22, 1);
+                nodeList[17].connectNodeIndex(1, 16, 10);
+                nodeList[17].connectNodeIndex(2, 18, 10);
+                nodeList[17].connectNodeIndex(3, 20, 10);
+                nodeList[17].connectNodeIndex(4, 22, 10);
 
-                nodeList[18].connectNodeIndex(1, 17, 1);
-                nodeList[18].connectNodeIndex(2, 19, 1);
-                nodeList[18].connectNodeIndex(3, 14, 1);
+                nodeList[18].connectNodeIndex(1, 17, 10);
+                nodeList[18].connectNodeIndex(2, 19, 10);
+                nodeList[18].connectNodeIndex(3, 14, 10);
 
-                nodeList[19].connectNodeIndex(1, 4, 1);
-                nodeList[19].connectNodeIndex(2, 18, 1);
-                nodeList[19].connectNodeIndex(3, 20, 1);
+                nodeList[19].connectNodeIndex(1, 4, 10);
+                nodeList[19].connectNodeIndex(2, 18, 10);
+                nodeList[19].connectNodeIndex(3, 20, 10);
 
-                nodeList[20].connectNodeIndex(1, 17, 1);
-                nodeList[20].connectNodeIndex(2, 19, 1);
-                nodeList[20].connectNodeIndex(3, 21, 1);
+                nodeList[20].connectNodeIndex(1, 17, 10);
+                nodeList[20].connectNodeIndex(2, 19, 10);
+                nodeList[20].connectNodeIndex(3, 21, 10);
 
-                nodeList[21].connectNodeIndex(1, 20, 1);
-                nodeList[21].connectNodeIndex(2, 22, 1);
+                nodeList[21].connectNodeIndex(1, 20, 10);
+                nodeList[21].connectNodeIndex(2, 22, 10);
 
-                nodeList[22].connectNodeIndex(1, 17, 1);
-                nodeList[22].connectNodeIndex(2, 21, 1);
-                nodeList[22].connectNodeIndex(3, 23, 1);
+                nodeList[22].connectNodeIndex(1, 17, 10);
+                nodeList[22].connectNodeIndex(2, 21, 10);
+                nodeList[22].connectNodeIndex(3, 23, 10);
 
-                nodeList[23].connectNodeIndex(1, 22, 1);
-                nodeList[23].connectNodeIndex(2, 24, 1);
-                nodeList[23].connectNodeIndex(3, 26, 1);
+                nodeList[23].connectNodeIndex(1, 22, 10);
+                nodeList[23].connectNodeIndex(2, 24, 10);
+                nodeList[23].connectNodeIndex(3, 26, 10);
 
-                nodeList[24].connectNodeIndex(1, 23, 1);
-                nodeList[24].connectNodeIndex(2, 25, 1);
+                nodeList[24].connectNodeIndex(1, 23, 10);
+                nodeList[24].connectNodeIndex(2, 25, 10);
 
-                nodeList[25].connectNodeIndex(1, 9, 1);
-                nodeList[25].connectNodeIndex(2, 24, 1);
-                nodeList[25].connectNodeIndex(3, 26, 1);
+                nodeList[25].connectNodeIndex(1, 9, 10);
+                nodeList[25].connectNodeIndex(2, 24, 10);
+                nodeList[25].connectNodeIndex(3, 26, 10);
 
-                nodeList[26].connectNodeIndex(1, 25, 1);
-                nodeList[26].connectNodeIndex(2, 27, 1);
+                nodeList[26].connectNodeIndex(1, 25, 10);
+                nodeList[26].connectNodeIndex(2, 27, 10);
 
-                nodeList[27].connectNodeIndex(1, 26, 1);
-                nodeList[27].connectNodeIndex(2, 28, 1);
+                nodeList[27].connectNodeIndex(1, 26, 10);
+                nodeList[27].connectNodeIndex(2, 28, 10);
 
-                nodeList[28].connectNodeIndex(1, 27, 1);
-                nodeList[28].connectNodeIndex(2, 29, 1);
+                nodeList[28].connectNodeIndex(1, 27, 10);
+                nodeList[28].connectNodeIndex(2, 29, 10);
 
-                nodeList[29].connectNodeIndex(1, 11, 1);
-                nodeList[29].connectNodeIndex(2, 15, 1);
-                nodeList[29].connectNodeIndex(3, 28, 1);
+                nodeList[29].connectNodeIndex(1, 11, 10);
+                nodeList[29].connectNodeIndex(2, 15, 10);
+                nodeList[29].connectNodeIndex(3, 28, 10);
+
+                for (int i = 1; i < nodeList.Length; i++)
+                {
+                    for (int j = 1; j < nodeList[i]._count; j++)
+                    {
+                        nodeList[i]._node_Weight[j] = Math.Sqrt(Math.Pow(nodeList[i].transform.position.x - nodeList[nodeList[i]._Connected_node[j]].transform.position.x, 2)
+                                                              + Math.Pow(nodeList[i].transform.position.z - nodeList[nodeList[i]._Connected_node[j]].transform.position.z, 2));
+                    }
+                }
 
                 break;
         }

@@ -16,11 +16,11 @@ public class AiMgr : MonoBehaviour
     public int count = 1;
 
     private int temp;
-    private int[] d = new int[7];
+    private double[] d = new double[7];
     private int[] d_path = new int[7];
 
     private int current;
-    private int distance;
+    private double distance;
 
     private int INF = 1000000000;
 
@@ -98,9 +98,9 @@ public class AiMgr : MonoBehaviour
 
         d[startNode] = 0;
 
-        List<Tuple<int, int>> pq = new List<Tuple<int, int>>(); //힙구조 유지
+        List<Tuple<int, double>> pq = new List<Tuple<int, double>>(); //힙구조 유지
 
-        pq.Add(new Tuple<int, int>(startNode, 0));
+        pq.Add(new Tuple<int, double>(startNode, 0));
 
         // 가까운 순서대로 처리 -> 큐 사용
         while (pq.Count != 0)
@@ -129,7 +129,7 @@ public class AiMgr : MonoBehaviour
                 // 선택된 노드의 인접노드를 담아줌, first는 int int의 첫번째 인자, 즉 노드 번호 / second는 두번째 인자, 즉 가중치를 의미함
                 int next = Node[current]._Connected_node[i];
                 // 선택된 노드를 거쳐서 인접노드로 가는 비용 계산
-                int nextDistance = distance + Node[current]._node_Weight[i];
+                double nextDistance = distance + Node[current]._node_Weight[i];
 
                 // 기존의 비용과 비교
                 if (nextDistance < d[next])
@@ -137,7 +137,7 @@ public class AiMgr : MonoBehaviour
                     d_path[next] = current;
                     d[next] = nextDistance;
 
-                    pq.Add(new Tuple<int, int>(next, nextDistance));
+                    pq.Add(new Tuple<int, double>(next, nextDistance));
                 }
             }
         }
